@@ -65,6 +65,6 @@ class UserAddressesController extends Controller
 
         $user_address->delete();
 
-        return redirect()->route('user_addresses.index');
+        return [];
     }
 }
