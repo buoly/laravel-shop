@@ -37,12 +37,20 @@ class User extends Authenticatable
     }
 
     /**
-     * 关联收藏关系
+     * 关联收藏
      */
     public function favoriteProducts()
     {
         return $this->belongsToMany(Product::class, 'user_favorite_products')
             ->withTimestamps()
             ->orderBy('user_favorite_products.created_at', 'desc');
+    }
+
+    /**
+     * 关联购物车
+     */
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
     }
 }
